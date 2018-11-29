@@ -16,52 +16,81 @@ import java.util.logging.Logger;
  * @author TooDe
  */
 public class Conexion {
-   // Propiedades
-//Conexion
-   private static Connection conn = null;
-   private String driver;
-   private String url;
-   private String usuario;
-   private String password;
-
-   // Constructor
-   private Conexion() {
-
-      String url = "jdbc:mysql://localhost:3306/sendnow";
-      String driver = "com.mysql.jdbc.Driver";
-      String usuario = "root";
-      String password = "";
-
-      try {
-         Class.forName(driver);
-         conn = (Connection) DriverManager.getConnection(url, usuario, password);
-      } catch (ClassNotFoundException | SQLException e) {
-         e.printStackTrace();
-         Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
-      } finally {
-         cerrarConexion();
-      }
-   } // Fin constructor
-
-   // Métodos
-   public static Connection getConnection() {
-
-      if (conn == null) {
-         new Conexion();
-      }
-
-      return conn;
-   }
-
-   public void cerrarConexion() {
-      try {
-         if (conn != null) {
-            conn.close();
-
+  private static Connection con=null;
+   public static Connection getConnection(){
+      try{
+         if( con == null ){
+            String driver="com.mysql.jdbc.Driver"; //el driver varia segun la DB que usemos
+            String url="jdbc:mysql://localhost/sendnow?autoReconnect=true";
+            String pwd="";
+            String usr="";
+            Class.forName(driver);
+            con = (Connection) DriverManager.getConnection(url,usr,pwd);
+            System.out.println("Conectionesfull");
          }
-      } catch (SQLException e) {
+     }
+     catch(ClassNotFoundException | SQLException ex){
+        ex.printStackTrace();
+     }
+     return con;
+   }   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Propiedades
+//Conexion
 
-         Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
-      }
-   }
+   /* private static Connection conn = null;
+    private final String base = "sendnow";
+    private final String user = "root";
+    private final String password = "";
+    private final String url = "jdbc:mysql://localhost:3306/" + base;
+
+    // Constructor
+    public Conexion() {
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = (Connection) DriverManager.getConnection(this.url, this.user, this.password);
+
+        } catch (SQLException e) {
+            System.err.println(e);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    } // Fin constructor
+
+    // Métodos
+    public static Connection getConnection() {
+
+        if (conn == null) {
+            new Conexion();
+            System.out.println("Conexion bien jjjj");
+        }
+
+        return conn;
+    }
+
+    public void cerrarConexion() {
+        try {
+            if (conn != null) {
+                conn.close();
+
+            }
+        } catch (SQLException e) {
+
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }*/
 }
