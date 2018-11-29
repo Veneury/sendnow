@@ -12,7 +12,7 @@ package Views;
 public class ArchivoPrueba {
    public void Pedro()
    {
-      System.out.println("Es un bruto");
+      System.out.println("i love u");
    }
    
 }
