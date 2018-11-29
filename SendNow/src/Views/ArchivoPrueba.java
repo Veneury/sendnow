@@ -10,5 +10,9 @@ package Views;
  * @author TooDe
  */
 public class ArchivoPrueba {
+   public void Pedro()
+   {
+      System.out.println("Es un bruto");
+   }
    
 }
