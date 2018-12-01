@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public abstract class Personas{
+public  class Personas{
     /*Creando variables*/
     protected String cedula;
     protected String nombre;
@@ -28,16 +28,11 @@ public abstract class Personas{
     
     
     /*Creando Metodos abstractos*/
-    public abstract void Add();
-    //public abstract void Wach();
-   // public abstract void Update();
-  //  public abstract void delete();
-   // public abstract void search();
-   // public abstract void SendEmail();
+ 
     
     /*Creando Constructor*/
     public Personas(String identificacion, String nombre, String apellido,String sexo, String estado_civil,String calle, String barrio, String sector, String municipio, String ciudad, String estado, String codigo_postal, String pais, String telefono, String correo, Date fecha) {
-        this.cedula = identificacion;
+        this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.sexo=sexo;
