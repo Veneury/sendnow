@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class Conexion {
    // Propiedades
 //Conexion
-   private static Connection conn = null;
+ /*  private static Connection conn = null;
    private String driver;
    private String url;
    private String usuario;
@@ -65,10 +65,10 @@ public class Conexion {
          Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
       }
    }
-}
+}*/
 
    
-/*private final String base = "sendnow";
+private final String base = "sendnow";
     private final String user = "root";
     private final String password = "";
     private final String url = "jdbc:mysql://localhost:3306/" + base;
@@ -92,5 +92,6 @@ public class Conexion {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
       return con;  
-    }*/
+    }
+}
 
