@@ -52,7 +52,25 @@ public  class Personas{
     }
  
     public Personas()
-    {}
+    {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.sexo=sexo;
+        this.estado_civil= estado_civil;
+        this.calle = calle;
+        this.barrio = barrio;
+        this.sector = sector;
+        this.municipio = municipio;
+        this.ciudad = ciudad;
+        this.estado = estado;
+        this.codigo_postal = codigo_postal;
+        this.pais = pais;
+        this.telefono = telefono;
+        this.celular=celular;
+        this.correo = correo;
+        this.fecha=fecha;
+    }
     
     public String getCedula() {
         return cedula;

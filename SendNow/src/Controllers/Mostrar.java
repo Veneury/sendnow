@@ -12,9 +12,10 @@ public class Mostrar {
         Personas per = new Personas();
         Cliente cli = new Cliente();
         AgreCL agre = new AgreCL();
+        EliminarCL el = new EliminarCL();
         
         MVC h= new MVC(per, cli, agre);
-        h.verAgregarClientes();
+        h.verEliminarClientes();
         agre .setVisible(true);
         
     }

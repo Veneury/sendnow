@@ -22,10 +22,11 @@ public class MVC implements ActionListener{
         this.cli=cli;
         this.agre=agre;
         this.agre.btnAgregar.addActionListener(this);
-        this.el.btnEliminar.addActionListener(this);
+        this.el.btnBorrar.addActionListener(this);
     }
 
     MVC() {
+        
          }
     
     public void verAgregarClientes(){
@@ -37,7 +38,7 @@ public class MVC implements ActionListener{
     public void verEliminarClientes(){
          el.setTitle("Cliente");
          el.setLocationRelativeTo(null);
-         el.txtCedula.setVisible(true);
+         el.txtEli.setVisible(true);
     }
     
     
@@ -71,7 +72,7 @@ public class MVC implements ActionListener{
          
         }
         
-     else if(e.getSource()==el.btnEliminar){
+     else if(e.getSource()==el.btnBorrar){
         
         per.setCedula(agre.txtCedula.getText());
         if(cli.Add(per)){
