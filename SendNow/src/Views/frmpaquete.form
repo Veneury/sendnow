@@ -82,7 +82,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="cboTipopaquetes" min="-2" pref="227" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="materialButtonCircle1" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="btnNuevoTipoPaquetePaquetes" min="-2" pref="48" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="materialTextField2" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -90,15 +90,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
-                          <Component id="materialButtomRectangle1" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btnagregarpaquete" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="materialButtomRectangle3" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btncancelarPaquetes" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="materialButtomRectangle2" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btnsalirpaquetes" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                          <Component id="materialTextField4" min="-2" pref="553" max="-2" attributes="0"/>
+                          <Component id="txtDescripcion" min="-2" pref="553" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -125,17 +125,17 @@
                                   <Component id="txtPesopaquete" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
                               </Group>
                               <Component id="cboTipopaquetes" min="-2" max="-2" attributes="0"/>
-                              <Component id="materialButtonCircle1" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="btnNuevoTipoPaquetePaquetes" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="materialTextField4" min="-2" pref="185" max="-2" attributes="0"/>
+                          <Component id="txtDescripcion" min="-2" pref="185" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="materialButtomRectangle1" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="materialButtomRectangle2" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="materialButtomRectangle3" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnagregarpaquete" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnsalirpaquetes" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btncancelarPaquetes" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="43" max="32767" attributes="0"/>
               </Group>
@@ -218,7 +218,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="materialTextField4">
+        <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="txtDescripcion">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -253,7 +253,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle1">
+        <Component class="principal.MaterialButtomRectangle" name="btnagregarpaquete">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e1" green="80" red="6a" type="rgb"/>
@@ -283,7 +283,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle2">
+        <Component class="principal.MaterialButtomRectangle" name="btnsalirpaquetes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="44" green="50" red="dd" type="rgb"/>
@@ -297,7 +297,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle3">
+        <Component class="principal.MaterialButtomRectangle" name="btncancelarPaquetes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="60" green="a1" red="1b" type="rgb"/>
@@ -311,7 +311,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="principal.MaterialButtonCircle" name="materialButtonCircle1">
+        <Component class="principal.MaterialButtonCircle" name="btnNuevoTipoPaquetePaquetes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e1" green="80" red="6a" type="rgb"/>

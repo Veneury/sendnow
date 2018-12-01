@@ -9,7 +9,7 @@ package Models;
  *
  * @author TooDe
  */
-public class Paquetes {
+public class ModelsPaquetes {
    private String codigo;
    private int tipo;
    private String nombre;
@@ -17,7 +17,7 @@ public class Paquetes {
    private String descripcion;
    private String status;
 
-   public Paquetes() {
+   public ModelsPaquetes() {
       this.codigo="";
       this.tipo=0;
       this.nombre="";
@@ -26,7 +26,7 @@ public class Paquetes {
       this.status="";
    }
 
-   public Paquetes(String codigo, int tipo, String nombre, String peso, String descripcion, String status) {
+   public ModelsPaquetes(String codigo, int tipo, String nombre, String peso, String descripcion, String status) {
       this.codigo = codigo;
       this.tipo = tipo;
       this.nombre = nombre;
