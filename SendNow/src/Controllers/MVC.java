@@ -17,7 +17,7 @@ public class MVC implements ActionListener{
     private AgreCL agre;
     private EliminarCL el;
 
-   public MVC(Personas per, Cliente cli, AgreCL agre ){
+   public MVC(Personas per, Cliente cli, AgreCL agre, EliminarCL el){
         this.per=per;
         this.cli=cli;
         this.agre=agre;
@@ -25,24 +25,16 @@ public class MVC implements ActionListener{
         this.el.btnBorrar.addActionListener(this);
     }
 
-    MVC() {
-        
-         }
-    
-    public void verAgregarClientes(){
-          agre.setTitle("Clientes");
-          agre.setLocationRelativeTo(null);
-          agre.txtCedula.setVisible(true);
-    }
-    
-    public void verEliminarClientes(){
-         el.setTitle("Cliente");
-         el.setLocationRelativeTo(null);
-         el.txtEli.setVisible(true);
-    }
-    
-    
+ 
 
+    MVC(Personas per, Cliente cli, EliminarCL el) {
+        this.per=per;
+        this.cli=cli;
+        this.agre=agre;
+        this.agre.btnAgregar.addActionListener(this);
+        this.el.btnBorrar.addActionListener(this);
+       }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         
@@ -65,6 +57,7 @@ public class MVC implements ActionListener{
         per.setTelefono(agre.txtTelefono.getText());
         per.setCelular(agre.txtCelular.getText());
         per.setCorreo(agre.txtCorreo.getText());
+        
         if(cli.Add(per)){
         JOptionPane.showMessageDialog(null, "Cliente Guardado");
         
@@ -74,8 +67,11 @@ public class MVC implements ActionListener{
         
      else if(e.getSource()==el.btnBorrar){
         
-        per.setCedula(agre.txtCedula.getText());
-        if(cli.Add(per)){
+        per.setCedula(el.txtEli.getText());
+        
+        if(cli.delete(per)){
+            
+            
         JOptionPane.showMessageDialog(null, "Cliente eliminado");
         
         }else{JOptionPane.showMessageDialog(null, "Error al eliminar cliente");}
