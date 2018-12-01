@@ -74,16 +74,16 @@
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="materialTextField1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="materialTextField5" min="-2" pref="174" max="-2" attributes="0"/>
+                  <Component id="txtCodigopaquete" min="-2" pref="174" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="materialTextField3" min="-2" pref="174" max="-2" attributes="0"/>
+                  <Component id="txtNombrepaquete" min="-2" pref="174" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="materialTextField7" min="-2" pref="174" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" min="-2" pref="171" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="materialButtonCircle1" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="txtPesopaquete" min="-2" pref="174" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="cboTipopaquetes" min="-2" pref="227" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="materialButtonCircle1" min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="materialTextField2" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
@@ -118,20 +118,14 @@
                           <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="materialTextField3" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
-                                  <Component id="materialTextField5" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
-                                  <Component id="materialTextField7" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtNombrepaquete" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Component id="txtCodigopaquete" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Component id="txtPesopaquete" alignment="3" min="-2" pref="69" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="materialButtonCircle1" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" min="-2" pref="38" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="cboTipopaquetes" min="-2" max="-2" attributes="0"/>
+                              <Component id="materialButtonCircle1" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Component id="materialTextField4" min="-2" pref="185" max="-2" attributes="0"/>
@@ -208,7 +202,7 @@
             <Property name="label" type="java.lang.String" value="Codigo"/>
           </Properties>
         </Component>
-        <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="materialTextField3">
+        <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="txtNombrepaquete">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -220,6 +214,9 @@
             <Property name="hint" type="java.lang.String" value="Digite nombre"/>
             <Property name="label" type="java.lang.String" value="Nombre paquete"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="materialTextField4">
           <Properties>
@@ -236,8 +233,11 @@
             <Property name="label" type="java.lang.String" value="Descripci&#xf3;n paquete"/>
             <Property name="scrollOffset" type="int" value="4"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="materialTextField5">
+        <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="txtCodigopaquete">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -249,6 +249,9 @@
             <Property name="hint" type="java.lang.String" value="Digite c&#xf3;digo"/>
             <Property name="label" type="java.lang.String" value="C&#xf3;digo paquete"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle1">
           <Properties>
@@ -260,8 +263,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Agregar"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="materialTextField7">
+        <Component class="de.craften.ui.swingmaterial.MaterialTextField" name="txtPesopaquete">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -273,28 +279,8 @@
             <Property name="hint" type="java.lang.String" value="Digite peso paquete"/>
             <Property name="label" type="java.lang.String" value="Peso paquete"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
-                <StringItem index="0" value="Tipo paquete"/>
-                <StringItem index="1" value="Caja"/>
-                <StringItem index="2" value="Sabana"/>
-                <StringItem index="3" value="Comida"/>
-                <StringItem index="4" value="Vino"/>
-                <StringItem index="5" value="Cama"/>
-              </StringArray>
-            </Property>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor Por defecto"/>
-            </Property>
-          </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
         <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle2">
@@ -307,6 +293,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle3">
           <Properties>
@@ -318,6 +307,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="principal.MaterialButtonCircle" name="materialButtonCircle1">
           <Properties>
@@ -333,6 +325,33 @@
               <Font name="Roboto Medium" size="36" style="1"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="de.craften.ui.swingmaterial.MaterialComboBox" name="cboTipopaquetes">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="66" type="rgb"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Tipo paquete"/>
+                <StringItem index="1" value="Caja"/>
+                <StringItem index="2" value="Tanque"/>
+                <StringItem index="3" value="Cama"/>
+              </StringArray>
+            </Property>
+            <Property name="accent" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d4" green="bc" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

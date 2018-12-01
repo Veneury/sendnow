@@ -35,15 +35,15 @@ public class frmpaquete extends javax.swing.JFrame {
       jLabel1 = new javax.swing.JLabel();
       materialTextField1 = new principal.MaterialTextField();
       materialTextField2 = new principal.MaterialTextField();
-      materialTextField3 = new de.craften.ui.swingmaterial.MaterialTextField();
+      txtNombrepaquete = new de.craften.ui.swingmaterial.MaterialTextField();
       materialTextField4 = new de.craften.ui.swingmaterial.MaterialTextField();
-      materialTextField5 = new de.craften.ui.swingmaterial.MaterialTextField();
+      txtCodigopaquete = new de.craften.ui.swingmaterial.MaterialTextField();
       materialButtomRectangle1 = new principal.MaterialButtomRectangle();
-      materialTextField7 = new de.craften.ui.swingmaterial.MaterialTextField();
-      jComboBox1 = new javax.swing.JComboBox<>();
+      txtPesopaquete = new de.craften.ui.swingmaterial.MaterialTextField();
       materialButtomRectangle2 = new principal.MaterialButtomRectangle();
       materialButtomRectangle3 = new principal.MaterialButtomRectangle();
       materialButtonCircle1 = new principal.MaterialButtonCircle();
+      cboTipopaquetes = new de.craften.ui.swingmaterial.MaterialComboBox();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setBackground(new java.awt.Color(255, 255, 255));
@@ -84,11 +84,11 @@ public class frmpaquete extends javax.swing.JFrame {
       materialTextField2.setHint("Hola");
       materialTextField2.setLabel("Codigo");
 
-      materialTextField3.setForeground(new java.awt.Color(0, 0, 0));
-      materialTextField3.setToolTipText("");
-      materialTextField3.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
-      materialTextField3.setHint("Digite nombre");
-      materialTextField3.setLabel("Nombre paquete");
+      txtNombrepaquete.setForeground(new java.awt.Color(0, 0, 0));
+      txtNombrepaquete.setToolTipText("");
+      txtNombrepaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtNombrepaquete.setHint("Digite nombre");
+      txtNombrepaquete.setLabel("Nombre paquete");
 
       materialTextField4.setColumns(20);
       materialTextField4.setForeground(new java.awt.Color(0, 0, 0));
@@ -99,25 +99,21 @@ public class frmpaquete extends javax.swing.JFrame {
       materialTextField4.setLabel("Descripción paquete");
       materialTextField4.setScrollOffset(4);
 
-      materialTextField5.setForeground(new java.awt.Color(0, 0, 0));
-      materialTextField5.setToolTipText("");
-      materialTextField5.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
-      materialTextField5.setHint("Digite código");
-      materialTextField5.setLabel("Código paquete");
+      txtCodigopaquete.setForeground(new java.awt.Color(0, 0, 0));
+      txtCodigopaquete.setToolTipText("");
+      txtCodigopaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtCodigopaquete.setHint("Digite código");
+      txtCodigopaquete.setLabel("Código paquete");
 
       materialButtomRectangle1.setBackground(new java.awt.Color(106, 128, 225));
       materialButtomRectangle1.setForeground(new java.awt.Color(255, 255, 255));
       materialButtomRectangle1.setText("Agregar");
 
-      materialTextField7.setForeground(new java.awt.Color(0, 0, 0));
-      materialTextField7.setToolTipText("");
-      materialTextField7.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
-      materialTextField7.setHint("Digite peso paquete");
-      materialTextField7.setLabel("Peso paquete");
-
-      jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-      jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo paquete", "Caja", "Sabana", "Comida", "Vino", "Cama" }));
-      jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      txtPesopaquete.setForeground(new java.awt.Color(0, 0, 0));
+      txtPesopaquete.setToolTipText("");
+      txtPesopaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtPesopaquete.setHint("Digite peso paquete");
+      txtPesopaquete.setLabel("Peso paquete");
 
       materialButtomRectangle2.setBackground(new java.awt.Color(221, 80, 68));
       materialButtomRectangle2.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,6 +129,11 @@ public class frmpaquete extends javax.swing.JFrame {
       materialButtonCircle1.setToolTipText("Nueva tipo paquete");
       materialButtonCircle1.setFont(new java.awt.Font("Roboto Medium", 1, 36)); // NOI18N
 
+      cboTipopaquetes.setBackground(new java.awt.Color(255, 255, 255));
+      cboTipopaquetes.setForeground(new java.awt.Color(102, 102, 102));
+      cboTipopaquetes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tipo paquete", "Caja", "Tanque", "Cama" }));
+      cboTipopaquetes.setAccent(new java.awt.Color(0, 188, 212));
+
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
       jPanel1Layout.setHorizontalGroup(
@@ -142,16 +143,16 @@ public class frmpaquete extends javax.swing.JFrame {
             .addGap(30, 30, 30)
             .addComponent(materialTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(materialTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtCodigopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(25, 25, 25)
-            .addComponent(materialTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtNombrepaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(materialTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(32, 32, 32)
-            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(materialButtonCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtPesopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(cboTipopaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(materialButtonCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(43, 43, 43)
             .addComponent(materialTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
          .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,17 +180,13 @@ public class frmpaquete extends javax.swing.JFrame {
                   .addComponent(materialTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(306, 306, 306))
                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                  .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                      .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(materialTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(materialTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(materialTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                           .addComponent(materialButtonCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                           .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(txtNombrepaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodigopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPesopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                     .addComponent(cboTipopaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(materialButtonCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                   .addGap(43, 43, 43)
                   .addComponent(materialTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(59, 59, 59)))
@@ -254,21 +251,21 @@ public class frmpaquete extends javax.swing.JFrame {
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private javax.swing.JComboBox<String> jComboBox1;
+   public de.craften.ui.swingmaterial.MaterialComboBox cboTipopaquetes;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
-   private principal.MaterialButtomRectangle materialButtomRectangle1;
-   private principal.MaterialButtomRectangle materialButtomRectangle2;
-   private principal.MaterialButtomRectangle materialButtomRectangle3;
-   private principal.MaterialButtonCircle materialButtonCircle1;
+   public principal.MaterialButtomRectangle materialButtomRectangle1;
+   public principal.MaterialButtomRectangle materialButtomRectangle2;
+   public principal.MaterialButtomRectangle materialButtomRectangle3;
+   public principal.MaterialButtonCircle materialButtonCircle1;
    private efectos.MaterialShadow materialShadow1;
    private efectos.MaterialShadow materialShadow2;
    private principal.MaterialTextField materialTextField1;
    private principal.MaterialTextField materialTextField2;
-   private de.craften.ui.swingmaterial.MaterialTextField materialTextField3;
-   private de.craften.ui.swingmaterial.MaterialTextField materialTextField4;
-   private de.craften.ui.swingmaterial.MaterialTextField materialTextField5;
-   private de.craften.ui.swingmaterial.MaterialTextField materialTextField7;
+   public de.craften.ui.swingmaterial.MaterialTextField materialTextField4;
+   public de.craften.ui.swingmaterial.MaterialTextField txtCodigopaquete;
+   public de.craften.ui.swingmaterial.MaterialTextField txtNombrepaquete;
+   public de.craften.ui.swingmaterial.MaterialTextField txtPesopaquete;
    // End of variables declaration//GEN-END:variables
 }
