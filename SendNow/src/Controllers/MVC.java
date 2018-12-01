@@ -59,7 +59,7 @@ public class MVC implements ActionListener{
         per.setMunicipio(agre.txtMunicipio.getText());
         per.setCiudad(agre.txtCiudad.getText());
         per.setEstado(agre.txtEstado.getText());
-        per.setCodigo_postal(agre.txtCodigo_postal.getText());
+        per.setCodigo_postal(agre.txtCodigoPostal.getText());
         per.setPais(agre.txtPais.getText());
         per.setTelefono(agre.txtTelefono.getText());
         per.setCelular(agre.txtCelular.getText());

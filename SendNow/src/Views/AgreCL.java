@@ -392,7 +392,7 @@ public class AgreCL extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public static principal.MaterialTextField txtApellido;
-    private principal.MaterialTextField txtBarrio;
+    public static principal.MaterialTextField txtBarrio;
     public static principal.MaterialTextField txtCalle;
     public static principal.MaterialTextField txtCedula;
     public static principal.MaterialTextField txtCelular;
@@ -404,7 +404,7 @@ public class AgreCL extends javax.swing.JFrame {
     public static principal.MaterialTextField txtMunicipio;
     public static principal.MaterialTextField txtNombre;
     public static principal.MaterialTextField txtPais;
-    private principal.MaterialTextField txtSector;
+    public static principal.MaterialTextField txtSector;
     public static principal.MaterialTextField txtSexo;
     public static principal.MaterialTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
