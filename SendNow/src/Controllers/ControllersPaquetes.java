@@ -1,8 +1,8 @@
 package Controllers;
 
 import Models.ModelsMetodosPaquetes;
-import Models.ModelsPaquetes;
-import Views.frmErroralAgregar;
+import Models.*;
+import Views.*;
 import Views.frmagregado;
 import Views.frmpaquete;
 import java.awt.event.ActionEvent;
@@ -18,6 +18,9 @@ public class ControllersPaquetes implements ActionListener {
    private ModelsPaquetes modp;
    private ModelsMetodosPaquetes modmp;
    private frmpaquete frmp;
+   private frmfiltrareditar frmfilp;
+  // private frmModificarpaquete frmmodp;
+   frmModificarpaquete frmop = new frmModificarpaquete();
    frmagregado good = new frmagregado();
    frmErroralAgregar ups = new frmErroralAgregar();
 
@@ -30,6 +33,12 @@ public class ControllersPaquetes implements ActionListener {
       this.frmp.btnsalirpaquetes.addActionListener(this);
       this.frmp.btnNuevoTipoPaquetePaquetes.addActionListener(this);
 
+   }
+   
+   public ControllersPaquetes(frmfiltrareditar frmfilp)
+   {
+      this.frmfilp=frmfilp;
+      this.frmfilp.btnProcesarEditPaquetes.addActionListener(this);
    }
 
    public void iniciar() {
@@ -53,6 +62,9 @@ public class ControllersPaquetes implements ActionListener {
             ups.setVisible(true);
 
          }
+      }if(e.getSource()==frmfilp.btnProcesarEditPaquetes)
+      {
+     
       }
    }
 

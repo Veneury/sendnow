@@ -16,13 +16,13 @@ import java.util.logging.Logger;
  * @author TooDe
  */
 public class ModelsMetodosPaquetes {
-   ConexionMySQL killer = new ConexionMySQL();
-
+   Connection con = ConexionMySQL.getConnection();
+   //ConexionMySQL killer = new ConexionMySQL();
+   
    public boolean addpackage(ModelsPaquetes paquetes) {
-      Connection con = killer.getConnection();
-
+  
       PreparedStatement ps = null;
-      if (killer.getConnection() != null) {
+      if (ConexionMySQL.getConnection() != null) {
          String sql = "INSERT INTO paquetes (codigo_paquete,id_tipoP,nombre_paquetes,descripcion,peso,status) VALUES(?,?,?,?,?,?)";
        
          try {
@@ -38,14 +38,13 @@ public class ModelsMetodosPaquetes {
          } catch (SQLException ex) {
             Logger.getLogger(ModelsMetodosPaquetes.class.getName()).log(Level.SEVERE, null, ex);
          }
-           
-            
-       
-      
          
       }
       return false;
    
    }
+   
+   
+ 
 
 }

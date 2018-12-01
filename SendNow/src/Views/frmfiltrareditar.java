@@ -30,9 +30,9 @@ public class frmfiltrareditar extends javax.swing.JFrame {
       jPanel2 = new javax.swing.JPanel();
       jLabel20 = new javax.swing.JLabel();
       jLabel1 = new javax.swing.JLabel();
-      materialTextField5 = new de.craften.ui.swingmaterial.MaterialTextField();
-      materialButtomRectangle4 = new principal.MaterialButtomRectangle();
-      materialButtomRectangle2 = new principal.MaterialButtomRectangle();
+      txtCodigoPaqueteEditar = new de.craften.ui.swingmaterial.MaterialTextField();
+      btnProcesarEditPaquetes = new principal.MaterialButtomRectangle();
+      btnCancelarEditPaquetes = new principal.MaterialButtomRectangle();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setLocation(new java.awt.Point(350, 150));
@@ -67,18 +67,18 @@ public class frmfiltrareditar extends javax.swing.JFrame {
       jLabel1.setForeground(new java.awt.Color(0, 0, 0));
       jLabel1.setText("Código paquete");
 
-      materialTextField5.setForeground(new java.awt.Color(0, 0, 0));
-      materialTextField5.setToolTipText("");
-      materialTextField5.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
-      materialTextField5.setHint("Código paquete a modificar");
+      txtCodigoPaqueteEditar.setForeground(new java.awt.Color(0, 0, 0));
+      txtCodigoPaqueteEditar.setToolTipText("");
+      txtCodigoPaqueteEditar.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtCodigoPaqueteEditar.setHint("Código paquete a modificar");
 
-      materialButtomRectangle4.setBackground(new java.awt.Color(27, 161, 96));
-      materialButtomRectangle4.setForeground(new java.awt.Color(255, 255, 255));
-      materialButtomRectangle4.setText("Procesar");
+      btnProcesarEditPaquetes.setBackground(new java.awt.Color(27, 161, 96));
+      btnProcesarEditPaquetes.setForeground(new java.awt.Color(255, 255, 255));
+      btnProcesarEditPaquetes.setText("Procesar");
 
-      materialButtomRectangle2.setBackground(new java.awt.Color(221, 80, 68));
-      materialButtomRectangle2.setForeground(new java.awt.Color(255, 255, 255));
-      materialButtomRectangle2.setText("Cancelar");
+      btnCancelarEditPaquetes.setBackground(new java.awt.Color(221, 80, 68));
+      btnCancelarEditPaquetes.setForeground(new java.awt.Color(255, 255, 255));
+      btnCancelarEditPaquetes.setText("Cancelar");
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
@@ -91,13 +91,13 @@ public class frmfiltrareditar extends javax.swing.JFrame {
                .addComponent(jLabel1)
                .addGroup(jPanel1Layout.createSequentialGroup()
                   .addGap(16, 16, 16)
-                  .addComponent(materialTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                  .addComponent(txtCodigoPaqueteEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
             .addContainerGap(64, Short.MAX_VALUE)
-            .addComponent(materialButtomRectangle4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnProcesarEditPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(materialButtomRectangle2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnCancelarEditPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(61, 61, 61))
       );
       jPanel1Layout.setVerticalGroup(
@@ -107,11 +107,11 @@ public class frmfiltrareditar extends javax.swing.JFrame {
             .addGap(31, 31, 31)
             .addComponent(jLabel1)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(materialTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(txtCodigoPaqueteEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(materialButtomRectangle2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(materialButtomRectangle4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(btnCancelarEditPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(btnProcesarEditPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(28, 28, 28))
       );
 
@@ -166,13 +166,13 @@ public class frmfiltrareditar extends javax.swing.JFrame {
     }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   public principal.MaterialButtomRectangle btnCancelarEditPaquetes;
+   public principal.MaterialButtomRectangle btnProcesarEditPaquetes;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel20;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
-   private principal.MaterialButtomRectangle materialButtomRectangle2;
-   private principal.MaterialButtomRectangle materialButtomRectangle4;
-   private de.craften.ui.swingmaterial.MaterialTextField materialTextField5;
+   public de.craften.ui.swingmaterial.MaterialTextField txtCodigoPaqueteEditar;
    // End of variables declaration//GEN-END:variables
 
 }
