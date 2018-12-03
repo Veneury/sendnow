@@ -18,11 +18,11 @@ public class ControllersPaquetes implements ActionListener {
    private ModelsPaquetes modp;
    private ModelsMetodosPaquetes modmp;
    private frmpaquete frmp;
-   private frmfiltrareditar frmfilp;
-  // private frmModificarpaquete frmmodp;
-   frmModificarpaquete frmop = new frmModificarpaquete();
    frmagregado good = new frmagregado();
    frmErroralAgregar ups = new frmErroralAgregar();
+   
+ 
+   
 
    public ControllersPaquetes(ModelsPaquetes modp, ModelsMetodosPaquetes modmp, frmpaquete frmp) {
       this.modp = modp;
@@ -31,14 +31,8 @@ public class ControllersPaquetes implements ActionListener {
       this.frmp.btnagregarpaquete.addActionListener(this);
       this.frmp.btncancelarPaquetes.addActionListener(this);
       this.frmp.btnsalirpaquetes.addActionListener(this);
-      this.frmp.btnNuevoTipoPaquetePaquetes.addActionListener(this);
+    
 
-   }
-   
-   public ControllersPaquetes(frmfiltrareditar frmfilp)
-   {
-      this.frmfilp=frmfilp;
-      this.frmfilp.btnProcesarEditPaquetes.addActionListener(this);
    }
 
    public void iniciar() {
@@ -51,7 +45,7 @@ public class ControllersPaquetes implements ActionListener {
 
       if (e.getSource() == frmp.btnagregarpaquete) {
          modp.setCodigo(frmp.txtCodigopaquete.getText());
-         modp.setTipo((int) frmp.cboTipopaquetes.getSelectedIndex());
+         modp.setTipo(frmp.txtTipoPaquete.getText());
          modp.setNombre(frmp.txtNombrepaquete.getText());
          modp.setDescripcion(frmp.txtDescripcion.getText());
          modp.setPeso(frmp.txtPesopaquete.getText());
@@ -62,10 +56,8 @@ public class ControllersPaquetes implements ActionListener {
             ups.setVisible(true);
 
          }
-      }if(e.getSource()==frmfilp.btnProcesarEditPaquetes)
-      {
-     
       }
+     
    }
 
 }

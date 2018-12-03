@@ -46,8 +46,7 @@ public class frmpaquete extends javax.swing.JFrame {
       txtPesopaquete = new de.craften.ui.swingmaterial.MaterialTextField();
       btnsalirpaquetes = new principal.MaterialButtomRectangle();
       btncancelarPaquetes = new principal.MaterialButtomRectangle();
-      btnNuevoTipoPaquetePaquetes = new principal.MaterialButtonCircle();
-      cboTipopaquetes = new de.craften.ui.swingmaterial.MaterialComboBox();
+      txtTipoPaquete = new de.craften.ui.swingmaterial.MaterialTextField();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setBackground(new java.awt.Color(255, 255, 255));
@@ -68,17 +67,17 @@ public class frmpaquete extends javax.swing.JFrame {
       jPanel2.setLayout(jPanel2Layout);
       jPanel2Layout.setHorizontalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+         .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGap(333, 333, 333)
             .addComponent(jLabel1)
-            .addGap(308, 308, 308))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       jPanel2Layout.setVerticalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-            .addContainerGap(16, Short.MAX_VALUE)
+         .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGap(14, 14, 14)
             .addComponent(jLabel1)
-            .addGap(14, 14, 14))
+            .addContainerGap(16, Short.MAX_VALUE))
       );
 
       materialTextField1.setHint("Codiggo");
@@ -127,16 +126,11 @@ public class frmpaquete extends javax.swing.JFrame {
       btncancelarPaquetes.setForeground(new java.awt.Color(255, 255, 255));
       btncancelarPaquetes.setText("Cancelar");
 
-      btnNuevoTipoPaquetePaquetes.setBackground(new java.awt.Color(106, 128, 225));
-      btnNuevoTipoPaquetePaquetes.setForeground(new java.awt.Color(255, 255, 255));
-      btnNuevoTipoPaquetePaquetes.setText("+");
-      btnNuevoTipoPaquetePaquetes.setToolTipText("Nueva tipo paquete");
-      btnNuevoTipoPaquetePaquetes.setFont(new java.awt.Font("Roboto Medium", 1, 36)); // NOI18N
-
-      cboTipopaquetes.setBackground(new java.awt.Color(255, 255, 255));
-      cboTipopaquetes.setForeground(new java.awt.Color(102, 102, 102));
-      cboTipopaquetes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tipo paquete", "Caja", "Tanque", "Cama" }));
-      cboTipopaquetes.setAccent(new java.awt.Color(0, 188, 212));
+      txtTipoPaquete.setForeground(new java.awt.Color(0, 0, 0));
+      txtTipoPaquete.setToolTipText("");
+      txtTipoPaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtTipoPaquete.setHint("Digite tipo paquete");
+      txtTipoPaquete.setLabel("Tipo paquete");
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
@@ -144,6 +138,19 @@ public class frmpaquete extends javax.swing.JFrame {
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addGroup(jPanel1Layout.createSequentialGroup()
+                  .addGap(167, 167, 167)
+                  .addComponent(btnagregarpaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addGap(28, 28, 28)
+                  .addComponent(btncancelarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                  .addComponent(btnsalirpaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addGroup(jPanel1Layout.createSequentialGroup()
+                  .addGap(156, 156, 156)
+                  .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(0, 228, Short.MAX_VALUE))
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
             .addGap(30, 30, 30)
             .addComponent(materialTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -152,53 +159,36 @@ public class frmpaquete extends javax.swing.JFrame {
             .addComponent(txtNombrepaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(txtPesopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(cboTipopaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(18, 18, 18)
-            .addComponent(btnNuevoTipoPaquetePaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(43, 43, 43)
+            .addGap(28, 28, 28)
+            .addComponent(txtTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(127, 127, 127)
             .addComponent(materialTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-         .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(jPanel1Layout.createSequentialGroup()
-                  .addGap(181, 181, 181)
-                  .addComponent(btnagregarpaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addGap(14, 14, 14)
-                  .addComponent(btncancelarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                  .addComponent(btnsalirpaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-               .addGroup(jPanel1Layout.createSequentialGroup()
-                  .addGap(156, 156, 156)
-                  .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGap(0, 0, Short.MAX_VALUE))
       );
       jPanel1Layout.setVerticalGroup(
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                .addGroup(jPanel1Layout.createSequentialGroup()
                   .addGap(105, 105, 105)
                   .addComponent(materialTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(26, 26, 26)
                   .addComponent(materialTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addGap(306, 306, 306))
-               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                  .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNombrepaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCodigopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtPesopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                     .addComponent(cboTipopaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                     .addComponent(btnNuevoTipoPaquetePaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addGap(306, 306, 306)
+                  .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                     .addComponent(btnsalirpaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(btncancelarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(btnagregarpaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addGap(0, 43, Short.MAX_VALUE))
+               .addGroup(jPanel1Layout.createSequentialGroup()
+                  .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                     .addComponent(txtNombrepaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(txtCodigopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(txtPesopaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(txtTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                   .addGap(43, 43, 43)
                   .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addGap(59, 59, 59)))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(btnagregarpaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(btnsalirpaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(btncancelarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(0, 43, Short.MAX_VALUE))
+                  .addGap(151, 151, 151))))
       );
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,22 +239,16 @@ public class frmpaquete extends javax.swing.JFrame {
       /* Create and display the form */
       java.awt.EventQueue.invokeLater(new Runnable() {
          public void run() {
-            ModelsPaquetes modp = new ModelsPaquetes();
-            ModelsMetodosPaquetes modmp = new ModelsMetodosPaquetes();
-            frmpaquete frmp = new frmpaquete();
-            ControllersPaquetes ctrl = new ControllersPaquetes(modp, modmp, frmp);
-            ctrl.iniciar();
-            frmp.setVisible(true);
+      new frmpaquete().setVisible(true);
+            //frmp.setVisible(true);
          }
       });
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   public principal.MaterialButtonCircle btnNuevoTipoPaquetePaquetes;
    public principal.MaterialButtomRectangle btnagregarpaquete;
    public principal.MaterialButtomRectangle btncancelarPaquetes;
    public principal.MaterialButtomRectangle btnsalirpaquetes;
-   public de.craften.ui.swingmaterial.MaterialComboBox cboTipopaquetes;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
@@ -276,5 +260,6 @@ public class frmpaquete extends javax.swing.JFrame {
    public de.craften.ui.swingmaterial.MaterialTextField txtDescripcion;
    public de.craften.ui.swingmaterial.MaterialTextField txtNombrepaquete;
    public de.craften.ui.swingmaterial.MaterialTextField txtPesopaquete;
+   public de.craften.ui.swingmaterial.MaterialTextField txtTipoPaquete;
    // End of variables declaration//GEN-END:variables
 }

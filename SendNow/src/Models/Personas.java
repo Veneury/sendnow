@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public  class Personas{
     /*Creando variables*/
+   private int id;
     protected String cedula;
     protected String nombre;
     protected String apellido;
@@ -50,6 +51,9 @@ public  class Personas{
         this.correo = correo;
         this.fecha=fecha;
     }
+
+    
+    
  
     public Personas()
     {
@@ -71,6 +75,14 @@ public  class Personas{
         this.correo = correo;
         this.fecha=fecha;
     }
+
+   public int getId() {
+      return id;
+   }
+
+   public void setId(int id) {
+      this.id = id;
+   }
     
     public String getCedula() {
         return cedula;

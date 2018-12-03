@@ -1,20 +1,30 @@
-/*
+   /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 package Views;
+import Models.*;
+import Models.ConexionMySQL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
  * @author TooDe
  */
 public class frmAsignarPaquetes extends javax.swing.JFrame {
-
+      Connection con = ConexionMySQL.getConnection();
+   PreparedStatement ps = null;
     /** Creates new form frmagregado */
     public frmAsignarPaquetes() {
-        initComponents();
+            initComponents();
+ searchPaquetes();
+ searchClientes();
+    
     }
 
     /** This method is called from within the constructor to
@@ -30,14 +40,14 @@ public class frmAsignarPaquetes extends javax.swing.JFrame {
       jPanel1 = new javax.swing.JPanel();
       jPanel2 = new javax.swing.JPanel();
       jLabel20 = new javax.swing.JLabel();
-      materialButtomRectangle1 = new principal.MaterialButtomRectangle();
-      materialButtomRectangle3 = new principal.MaterialButtomRectangle();
-      materialButtomRectangle5 = new principal.MaterialButtomRectangle();
-      jComboBox1 = new javax.swing.JComboBox<>();
+      btnAsignarPaquetes = new principal.MaterialButtomRectangle();
+      btnCancelarAsignacion = new principal.MaterialButtomRectangle();
+      btnSalirAsignarPaquetes = new principal.MaterialButtomRectangle();
+      cboPaquete = new javax.swing.JComboBox<>();
       jLabel2 = new javax.swing.JLabel();
-      jComboBox2 = new javax.swing.JComboBox<>();
+      cboCliente = new javax.swing.JComboBox<>();
       jLabel3 = new javax.swing.JLabel();
-      rSDateChooser1 = new rojeru_san.componentes.RSDateChooser();
+      DCDate = new rojeru_san.componentes.RSDateChooser();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setLocation(new java.awt.Point(350, 150));
@@ -68,40 +78,40 @@ public class frmAsignarPaquetes extends javax.swing.JFrame {
             .addContainerGap(30, Short.MAX_VALUE))
       );
 
-      materialButtomRectangle1.setBackground(new java.awt.Color(106, 128, 225));
-      materialButtomRectangle1.setForeground(new java.awt.Color(255, 255, 255));
-      materialButtomRectangle1.setText("Asignar");
+      btnAsignarPaquetes.setBackground(new java.awt.Color(106, 128, 225));
+      btnAsignarPaquetes.setForeground(new java.awt.Color(255, 255, 255));
+      btnAsignarPaquetes.setText("Asignar");
 
-      materialButtomRectangle3.setBackground(new java.awt.Color(27, 161, 96));
-      materialButtomRectangle3.setForeground(new java.awt.Color(255, 255, 255));
-      materialButtomRectangle3.setText("Cancelar");
+      btnCancelarAsignacion.setBackground(new java.awt.Color(27, 161, 96));
+      btnCancelarAsignacion.setForeground(new java.awt.Color(255, 255, 255));
+      btnCancelarAsignacion.setText("Cancelar");
 
-      materialButtomRectangle5.setBackground(new java.awt.Color(221, 80, 68));
-      materialButtomRectangle5.setForeground(new java.awt.Color(255, 255, 255));
-      materialButtomRectangle5.setText("Salir");
+      btnSalirAsignarPaquetes.setBackground(new java.awt.Color(221, 80, 68));
+      btnSalirAsignarPaquetes.setForeground(new java.awt.Color(255, 255, 255));
+      btnSalirAsignarPaquetes.setText("Salir");
 
-      jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-      jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-      jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paquete", "Caja navideña", "Tanque", "Vino", "Spaguetis" }));
-      jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      cboPaquete.setBackground(new java.awt.Color(255, 255, 255));
+      cboPaquete.setForeground(new java.awt.Color(0, 0, 0));
+      cboPaquete.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Paquete", "Caja navideña", "Tanque", "Vino", "Spaguetis" }));
+      cboPaquete.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
       jLabel2.setFont(new java.awt.Font("Century", 1, 14)); // NOI18N
       jLabel2.setForeground(new java.awt.Color(51, 51, 51));
       jLabel2.setText("Seleccione paquete");
 
-      jComboBox2.setBackground(new java.awt.Color(255, 255, 255));
-      jComboBox2.setForeground(new java.awt.Color(0, 0, 0));
-      jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Pedro", "Veneury", "Emely", "Juan" }));
-      jComboBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+      cboCliente.setBackground(new java.awt.Color(255, 255, 255));
+      cboCliente.setForeground(new java.awt.Color(0, 0, 0));
+      cboCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Pedro", "Veneury", "Emely", "Juan" }));
+      cboCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
       jLabel3.setFont(new java.awt.Font("Century", 1, 14)); // NOI18N
       jLabel3.setForeground(new java.awt.Color(51, 51, 51));
       jLabel3.setText("Seleccione el cliente");
 
-      rSDateChooser1.setForeground(new java.awt.Color(51, 51, 51));
-      rSDateChooser1.setBgChooser(new java.awt.Color(106, 128, 225));
-      rSDateChooser1.setColorBackground(new java.awt.Color(0, 139, 205));
-      rSDateChooser1.setColorDiaActual(new java.awt.Color(221, 80, 68));
+      DCDate.setForeground(new java.awt.Color(51, 51, 51));
+      DCDate.setBgChooser(new java.awt.Color(106, 128, 225));
+      DCDate.setColorBackground(new java.awt.Color(0, 139, 205));
+      DCDate.setColorDiaActual(new java.awt.Color(221, 80, 68));
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
@@ -113,22 +123,22 @@ public class frmAsignarPaquetes extends javax.swing.JFrame {
                .addGroup(jPanel1Layout.createSequentialGroup()
                   .addGap(20, 20, 20)
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(cboPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                      .addComponent(jLabel2))
                   .addGap(27, 27, 27)
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                      .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cboCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DCDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                      .addComponent(jLabel3)))
                .addGroup(jPanel1Layout.createSequentialGroup()
                   .addGap(82, 82, 82)
-                  .addComponent(materialButtomRectangle1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(btnAsignarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                  .addComponent(materialButtomRectangle3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(btnCancelarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                  .addComponent(materialButtomRectangle5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                  .addComponent(btnSalirAsignarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       jPanel1Layout.setVerticalGroup(
@@ -140,17 +150,17 @@ public class frmAsignarPaquetes extends javax.swing.JFrame {
                .addGroup(jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                  .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(cboPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                .addGroup(jPanel1Layout.createSequentialGroup()
                   .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                  .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-               .addComponent(rSDateChooser1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(cboCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(DCDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(materialButtomRectangle5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(materialButtomRectangle3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(materialButtomRectangle1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(btnSalirAsignarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(btnCancelarAsignacion, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(btnAsignarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(18, 18, 18))
       );
 
@@ -176,57 +186,73 @@ public class frmAsignarPaquetes extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmAsignarPaquetes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmAsignarPaquetes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmAsignarPaquetes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmAsignarPaquetes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmAsignarPaquetes().setVisible(true);
+              
             }
         });
     }
 
+   public void searchPaquetes() {
+
+      try {
+
+         ResultSet resultSet = null;
+
+         ps = con.prepareStatement("SELECT * FROM paquetes");
+         resultSet = ps.executeQuery();
+         this.cboPaquete.removeAllItems();
+        this.cboPaquete.addItem("Seleccione un paquete");
+         while(resultSet.next()) {
+           this.cboPaquete.addItem(resultSet.getString("nombre_paquetes"));
+         }
+        
+      } catch (Exception e) {
+         System.err.println(e);
+
+      }
+
+   }
+   
+   public void searchClientes() {
+      
+
+      try {
+
+         ResultSet resultSet = null;
+
+         ps = con.prepareStatement("SELECT * FROM clientes");
+         resultSet = ps.executeQuery();
+         this.cboCliente.removeAllItems();
+        this.cboCliente.addItem("Seleccione un cliente");
+         while(resultSet.next()) {
+         
+          
+           this.cboCliente.addItem(resultSet.getString("nombre"));
+        
+         }
+        
+      } catch (Exception e) {
+         System.err.println(e);
+
+      }
+
+   }
+
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private javax.swing.JComboBox<String> jComboBox1;
-   private javax.swing.JComboBox<String> jComboBox2;
+   public rojeru_san.componentes.RSDateChooser DCDate;
+   public principal.MaterialButtomRectangle btnAsignarPaquetes;
+   public principal.MaterialButtomRectangle btnCancelarAsignacion;
+   public principal.MaterialButtomRectangle btnSalirAsignarPaquetes;
+   public javax.swing.JComboBox<String> cboCliente;
+   public javax.swing.JComboBox<String> cboPaquete;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel20;
    private javax.swing.JLabel jLabel3;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
-   private principal.MaterialButtomRectangle materialButtomRectangle1;
-   private principal.MaterialButtomRectangle materialButtomRectangle3;
-   private principal.MaterialButtomRectangle materialButtomRectangle5;
    private rojeru_san.componentes.RSCalendar rSCalendar1;
-   private rojeru_san.componentes.RSDateChooser rSDateChooser1;
    // End of variables declaration//GEN-END:variables
 
 }

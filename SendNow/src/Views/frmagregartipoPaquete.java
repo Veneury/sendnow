@@ -29,11 +29,11 @@ public class frmagregartipoPaquete extends javax.swing.JFrame {
       jPanel1 = new javax.swing.JPanel();
       jPanel2 = new javax.swing.JPanel();
       jLabel20 = new javax.swing.JLabel();
-      materialTextField5 = new de.craften.ui.swingmaterial.MaterialTextField();
-      materialTextField6 = new de.craften.ui.swingmaterial.MaterialTextField();
-      materialButtomRectangle1 = new principal.MaterialButtomRectangle();
-      materialButtomRectangle3 = new principal.MaterialButtomRectangle();
-      materialButtomRectangle5 = new principal.MaterialButtomRectangle();
+      txtNombretipoPaquete = new de.craften.ui.swingmaterial.MaterialTextField();
+      txtCodigoTipoPaquete = new de.craften.ui.swingmaterial.MaterialTextField();
+      btnagregartipoPaquete = new principal.MaterialButtomRectangle();
+      btnCancelarTipoPaquete = new principal.MaterialButtomRectangle();
+      btnSalirTipoPaqueteAgregar = new principal.MaterialButtomRectangle();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setLocation(new java.awt.Point(350, 150));
@@ -64,31 +64,30 @@ public class frmagregartipoPaquete extends javax.swing.JFrame {
             .addContainerGap(31, Short.MAX_VALUE))
       );
 
-      materialTextField5.setForeground(new java.awt.Color(0, 0, 0));
-      materialTextField5.setToolTipText("");
-      materialTextField5.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
-      materialTextField5.setHint("Ponga el nombre");
-      materialTextField5.setLabel("Nombre tipo paquete");
+      txtNombretipoPaquete.setForeground(new java.awt.Color(0, 0, 0));
+      txtNombretipoPaquete.setToolTipText("");
+      txtNombretipoPaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtNombretipoPaquete.setHint("Ponga el nombre");
+      txtNombretipoPaquete.setLabel("Nombre tipo paquete");
 
-      materialTextField6.setForeground(new java.awt.Color(0, 0, 0));
-      materialTextField6.setText("000-VRGTT55M");
-      materialTextField6.setToolTipText("");
-      materialTextField6.setEnabled(false);
-      materialTextField6.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
-      materialTextField6.setHint("000-ASS5AA5");
-      materialTextField6.setLabel("Código tipo paquete");
+      txtCodigoTipoPaquete.setForeground(new java.awt.Color(0, 0, 0));
+      txtCodigoTipoPaquete.setText("000-VRGTT55M");
+      txtCodigoTipoPaquete.setToolTipText("");
+      txtCodigoTipoPaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtCodigoTipoPaquete.setHint("000-ASS5AA5");
+      txtCodigoTipoPaquete.setLabel("Código tipo paquete");
 
-      materialButtomRectangle1.setBackground(new java.awt.Color(106, 128, 225));
-      materialButtomRectangle1.setForeground(new java.awt.Color(255, 255, 255));
-      materialButtomRectangle1.setText("Modificar");
+      btnagregartipoPaquete.setBackground(new java.awt.Color(106, 128, 225));
+      btnagregartipoPaquete.setForeground(new java.awt.Color(255, 255, 255));
+      btnagregartipoPaquete.setText("Agregar");
 
-      materialButtomRectangle3.setBackground(new java.awt.Color(27, 161, 96));
-      materialButtomRectangle3.setForeground(new java.awt.Color(255, 255, 255));
-      materialButtomRectangle3.setText("Cancelar");
+      btnCancelarTipoPaquete.setBackground(new java.awt.Color(27, 161, 96));
+      btnCancelarTipoPaquete.setForeground(new java.awt.Color(255, 255, 255));
+      btnCancelarTipoPaquete.setText("Cancelar");
 
-      materialButtomRectangle5.setBackground(new java.awt.Color(221, 80, 68));
-      materialButtomRectangle5.setForeground(new java.awt.Color(255, 255, 255));
-      materialButtomRectangle5.setText("Salir");
+      btnSalirTipoPaqueteAgregar.setBackground(new java.awt.Color(221, 80, 68));
+      btnSalirTipoPaqueteAgregar.setForeground(new java.awt.Color(255, 255, 255));
+      btnSalirTipoPaqueteAgregar.setText("Salir");
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
@@ -99,16 +98,16 @@ public class frmagregartipoPaquete extends javax.swing.JFrame {
             .addContainerGap(38, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                  .addComponent(materialButtomRectangle1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(btnagregartipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                  .addComponent(materialButtomRectangle3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(btnCancelarTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                  .addComponent(materialButtomRectangle5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(btnSalirTipoPaqueteAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(57, 57, 57))
                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                  .addComponent(materialTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(txtCodigoTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                  .addComponent(materialTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(txtNombretipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(72, 72, 72))))
       );
       jPanel1Layout.setVerticalGroup(
@@ -117,13 +116,13 @@ public class frmagregartipoPaquete extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(37, 37, 37)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-               .addComponent(materialTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(materialTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(txtNombretipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(txtCodigoTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(58, 58, 58)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(materialButtomRectangle5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(materialButtomRectangle3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(materialButtomRectangle1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(btnSalirTipoPaqueteAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(btnCancelarTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(btnagregartipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addContainerGap(40, Short.MAX_VALUE))
       );
 
@@ -180,14 +179,14 @@ public class frmagregartipoPaquete extends javax.swing.JFrame {
     }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   public principal.MaterialButtomRectangle btnCancelarTipoPaquete;
+   public principal.MaterialButtomRectangle btnSalirTipoPaqueteAgregar;
+   public principal.MaterialButtomRectangle btnagregartipoPaquete;
    private javax.swing.JLabel jLabel20;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
-   private principal.MaterialButtomRectangle materialButtomRectangle1;
-   private principal.MaterialButtomRectangle materialButtomRectangle3;
-   private principal.MaterialButtomRectangle materialButtomRectangle5;
-   private de.craften.ui.swingmaterial.MaterialTextField materialTextField5;
-   private de.craften.ui.swingmaterial.MaterialTextField materialTextField6;
+   public de.craften.ui.swingmaterial.MaterialTextField txtCodigoTipoPaquete;
+   public de.craften.ui.swingmaterial.MaterialTextField txtNombretipoPaquete;
    // End of variables declaration//GEN-END:variables
 
 }

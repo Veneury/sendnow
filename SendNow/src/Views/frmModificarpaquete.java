@@ -35,14 +35,16 @@ public class frmModificarpaquete extends javax.swing.JFrame {
       jLabel1 = new javax.swing.JLabel();
       materialTextField1 = new principal.MaterialTextField();
       materialTextField2 = new principal.MaterialTextField();
-      txtNombreModificarPaquete = new de.craften.ui.swingmaterial.MaterialTextField();
+      txtSearch = new de.craften.ui.swingmaterial.MaterialTextField();
       txtDescripcionModificarPaquetes = new de.craften.ui.swingmaterial.MaterialTextField();
       txtCodigoModificarPaquete = new de.craften.ui.swingmaterial.MaterialTextField();
       btnMoficarPaquetes = new principal.MaterialButtomRectangle();
       txtPesoModificarPaquetes = new de.craften.ui.swingmaterial.MaterialTextField();
       btnSalirModificarPaquetes = new principal.MaterialButtomRectangle();
       btnCancelarModificacionPaquete = new principal.MaterialButtomRectangle();
-      cboTipoModicarPaquete = new de.craften.ui.swingmaterial.MaterialComboBox();
+      txtNombreModificarPaquete = new de.craften.ui.swingmaterial.MaterialTextField();
+      btnBusc = new principal.MaterialButtomRectangle();
+      txtTipoPaquete = new de.craften.ui.swingmaterial.MaterialTextField();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setBackground(new java.awt.Color(255, 255, 255));
@@ -83,16 +85,14 @@ public class frmModificarpaquete extends javax.swing.JFrame {
       materialTextField2.setHint("Hola");
       materialTextField2.setLabel("Codigo");
 
-      txtNombreModificarPaquete.setForeground(new java.awt.Color(0, 0, 0));
-      txtNombreModificarPaquete.setText("Caja navideña");
-      txtNombreModificarPaquete.setToolTipText("");
-      txtNombreModificarPaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
-      txtNombreModificarPaquete.setHint("Digite nombre");
-      txtNombreModificarPaquete.setLabel("Nombre paquete");
+      txtSearch.setForeground(new java.awt.Color(0, 0, 0));
+      txtSearch.setToolTipText("");
+      txtSearch.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtSearch.setHint("Digite código paquete");
+      txtSearch.setLabel("Código paquete");
 
       txtDescripcionModificarPaquetes.setColumns(20);
       txtDescripcionModificarPaquetes.setForeground(new java.awt.Color(0, 0, 0));
-      txtDescripcionModificarPaquetes.setText("Paquete enviado por razón de agrado a mi madre.");
       txtDescripcionModificarPaquetes.setToolTipText("");
       txtDescripcionModificarPaquetes.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
       txtDescripcionModificarPaquetes.setHint("Descripción paquete");
@@ -112,7 +112,6 @@ public class frmModificarpaquete extends javax.swing.JFrame {
       btnMoficarPaquetes.setText("Modificar");
 
       txtPesoModificarPaquetes.setForeground(new java.awt.Color(0, 0, 0));
-      txtPesoModificarPaquetes.setText("60 Libras");
       txtPesoModificarPaquetes.setToolTipText("");
       txtPesoModificarPaquetes.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
       txtPesoModificarPaquetes.setHint("Digite peso paquete");
@@ -126,10 +125,21 @@ public class frmModificarpaquete extends javax.swing.JFrame {
       btnCancelarModificacionPaquete.setForeground(new java.awt.Color(255, 255, 255));
       btnCancelarModificacionPaquete.setText("Cancelar");
 
-      cboTipoModicarPaquete.setBackground(new java.awt.Color(255, 255, 255));
-      cboTipoModicarPaquete.setForeground(new java.awt.Color(102, 102, 102));
-      cboTipoModicarPaquete.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tipo paquete", "Caja", "Tanque", "Cama" }));
-      cboTipoModicarPaquete.setAccent(new java.awt.Color(0, 188, 212));
+      txtNombreModificarPaquete.setForeground(new java.awt.Color(0, 0, 0));
+      txtNombreModificarPaquete.setToolTipText("");
+      txtNombreModificarPaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtNombreModificarPaquete.setHint("Digite nombre");
+      txtNombreModificarPaquete.setLabel("Nombre paquete");
+
+      btnBusc.setBackground(new java.awt.Color(3, 93, 227));
+      btnBusc.setForeground(new java.awt.Color(255, 255, 255));
+      btnBusc.setText("Buscar");
+
+      txtTipoPaquete.setForeground(new java.awt.Color(0, 0, 0));
+      txtTipoPaquete.setToolTipText("");
+      txtTipoPaquete.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
+      txtTipoPaquete.setHint("Digite tipo paquete");
+      txtTipoPaquete.setLabel("Tipo paquete");
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
@@ -141,13 +151,13 @@ public class frmModificarpaquete extends javax.swing.JFrame {
             .addComponent(materialTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(txtCodigoModificarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(25, 25, 25)
+            .addGap(18, 18, 18)
             .addComponent(txtNombreModificarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
             .addComponent(txtPesoModificarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(cboTipoModicarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(21, 21, 21)
+            .addGap(18, 18, 18)
+            .addComponent(txtTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(68, 68, 68)
             .addComponent(materialTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
          .addGroup(jPanel1Layout.createSequentialGroup()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +169,12 @@ public class frmModificarpaquete extends javax.swing.JFrame {
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                   .addComponent(btnSalirModificarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                .addGroup(jPanel1Layout.createSequentialGroup()
-                  .addGap(156, 156, 156)
+                  .addGap(230, 230, 230)
+                  .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addGap(18, 18, 18)
+                  .addComponent(btnBusc, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addGroup(jPanel1Layout.createSequentialGroup()
+                  .addGap(126, 126, 126)
                   .addComponent(txtDescripcionModificarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(0, 0, Short.MAX_VALUE))
       );
@@ -175,16 +190,19 @@ public class frmModificarpaquete extends javax.swing.JFrame {
                   .addComponent(materialTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                   .addGap(306, 306, 306))
                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                  .addGap(32, 32, 32)
                   .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNombreModificarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCodigoModificarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtPesoModificarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                     .addComponent(cboTipoModicarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addGap(43, 43, 43)
+                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(btnBusc, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addGap(18, 18, 18)
+                  .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                     .addComponent(txtCodigoModificarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(txtPesoModificarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(txtNombreModificarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(txtTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addGap(68, 68, 68)
                   .addComponent(txtDescripcionModificarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addGap(59, 59, 59)))
+                  .addGap(34, 34, 34)))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(btnMoficarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(btnSalirModificarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,10 +265,10 @@ public class frmModificarpaquete extends javax.swing.JFrame {
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   public principal.MaterialButtomRectangle btnBusc;
    public principal.MaterialButtomRectangle btnCancelarModificacionPaquete;
    public principal.MaterialButtomRectangle btnMoficarPaquetes;
    public principal.MaterialButtomRectangle btnSalirModificarPaquetes;
-   public de.craften.ui.swingmaterial.MaterialComboBox cboTipoModicarPaquete;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
@@ -262,5 +280,7 @@ public class frmModificarpaquete extends javax.swing.JFrame {
    public de.craften.ui.swingmaterial.MaterialTextField txtDescripcionModificarPaquetes;
    public de.craften.ui.swingmaterial.MaterialTextField txtNombreModificarPaquete;
    public de.craften.ui.swingmaterial.MaterialTextField txtPesoModificarPaquetes;
+   public de.craften.ui.swingmaterial.MaterialTextField txtSearch;
+   public de.craften.ui.swingmaterial.MaterialTextField txtTipoPaquete;
    // End of variables declaration//GEN-END:variables
 }

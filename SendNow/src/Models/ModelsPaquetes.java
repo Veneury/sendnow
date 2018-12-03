@@ -10,8 +10,9 @@ package Models;
  * @author TooDe
  */
 public class ModelsPaquetes {
+   private int id;
    private String codigo;
-   private int tipo;
+   private String tipo;
    private String nombre;
    private String peso;
    private String descripcion;
@@ -19,14 +20,14 @@ public class ModelsPaquetes {
 
    public ModelsPaquetes() {
       this.codigo="";
-      this.tipo=0;
+      this.tipo="";
       this.nombre="";
       this.peso="";
       this.descripcion="";
       this.status="";
    }
 
-   public ModelsPaquetes(String codigo, int tipo, String nombre, String peso, String descripcion, String status) {
+   public ModelsPaquetes(String codigo, String tipo, String nombre, String peso, String descripcion, String status) {
       this.codigo = codigo;
       this.tipo = tipo;
       this.nombre = nombre;
@@ -34,6 +35,15 @@ public class ModelsPaquetes {
       this.descripcion = descripcion;
       this.status = status;
    }
+
+   public int getId() {
+      return id;
+   }
+
+   public void setId(int id) {
+      this.id = id;
+   }
+   
 
    public String getCodigo() {
       return codigo;
@@ -43,11 +53,11 @@ public class ModelsPaquetes {
       this.codigo = codigo;
    }
 
-   public int getTipo() {
+   public String getTipo() {
       return tipo;
    }
 
-   public void setTipo(int tipo) {
+   public void setTipo(String tipo) {
       this.tipo = tipo;
    }
 

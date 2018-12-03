@@ -63,26 +63,26 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jComboBox1" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                              <Component id="cboPaquete" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jComboBox2" min="-2" pref="171" max="-2" attributes="0"/>
+                                  <Component id="cboCliente" min="-2" pref="171" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSDateChooser1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DCDate" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                          <Component id="materialButtomRectangle1" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btnAsignarPaquetes" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="materialButtomRectangle3" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btnCancelarAsignacion" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="materialButtomRectangle5" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="btnSalirAsignarPaquetes" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -98,20 +98,20 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel2" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="cboPaquete" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel3" min="-2" pref="16" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox2" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="cboCliente" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="rSDateChooser1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="DCDate" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="101" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="materialButtomRectangle5" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="materialButtomRectangle3" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="materialButtomRectangle1" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnSalirAsignarPaquetes" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnCancelarAsignacion" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btnAsignarPaquetes" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
@@ -160,7 +160,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle1">
+        <Component class="principal.MaterialButtomRectangle" name="btnAsignarPaquetes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e1" green="80" red="6a" type="rgb"/>
@@ -170,8 +170,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Asignar"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle3">
+        <Component class="principal.MaterialButtomRectangle" name="btnCancelarAsignacion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="60" green="a1" red="1b" type="rgb"/>
@@ -181,8 +184,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="principal.MaterialButtomRectangle" name="materialButtomRectangle5">
+        <Component class="principal.MaterialButtomRectangle" name="btnSalirAsignarPaquetes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="44" green="50" red="dd" type="rgb"/>
@@ -192,8 +198,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="cboPaquete">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -216,6 +225,7 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -229,7 +239,7 @@
             <Property name="text" type="java.lang.String" value="Seleccione paquete"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="cboCliente">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -252,6 +262,7 @@
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -265,7 +276,7 @@
             <Property name="text" type="java.lang.String" value="Seleccione el cliente"/>
           </Properties>
         </Component>
-        <Component class="rojeru_san.componentes.RSDateChooser" name="rSDateChooser1">
+        <Component class="rojeru_san.componentes.RSDateChooser" name="DCDate">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -280,6 +291,9 @@
               <Color blue="44" green="50" red="dd" type="rgb"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

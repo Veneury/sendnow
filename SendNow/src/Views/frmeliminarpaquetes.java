@@ -10,10 +10,10 @@ package Views;
  *
  * @author TooDe
  */
-public class frmfiltrareditar extends javax.swing.JFrame {
+public class frmeliminarpaquetes extends javax.swing.JFrame {
 
     /** Creates new form frmagregado */
-    public frmfiltrareditar() {
+    public frmeliminarpaquetes() {
         initComponents();
     }
 
@@ -31,7 +31,7 @@ public class frmfiltrareditar extends javax.swing.JFrame {
       jLabel20 = new javax.swing.JLabel();
       jLabel1 = new javax.swing.JLabel();
       txtCodigoPaqueteEditar = new de.craften.ui.swingmaterial.MaterialTextField();
-      btnProcesarEditPaquetes = new principal.MaterialButtomRectangle();
+      btnProcesarEliminarPaquetes = new principal.MaterialButtomRectangle();
       btnCancelarEditPaquetes = new principal.MaterialButtomRectangle();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,7 +44,7 @@ public class frmfiltrareditar extends javax.swing.JFrame {
 
       jLabel20.setFont(new java.awt.Font("Century", 1, 30)); // NOI18N
       jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-      jLabel20.setText("Editar paquetes");
+      jLabel20.setText("Eliminar paquetes");
 
       javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
       jPanel2.setLayout(jPanel2Layout);
@@ -53,14 +53,14 @@ public class frmfiltrareditar extends javax.swing.JFrame {
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel20)
-            .addGap(90, 90, 90))
+            .addGap(68, 68, 68))
       );
       jPanel2Layout.setVerticalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGap(19, 19, 19)
+            .addGap(21, 21, 21)
             .addComponent(jLabel20)
-            .addContainerGap(29, Short.MAX_VALUE))
+            .addContainerGap(27, Short.MAX_VALUE))
       );
 
       jLabel1.setFont(new java.awt.Font("Century", 1, 30)); // NOI18N
@@ -72,9 +72,9 @@ public class frmfiltrareditar extends javax.swing.JFrame {
       txtCodigoPaqueteEditar.setFont(new java.awt.Font("Century", 0, 18)); // NOI18N
       txtCodigoPaqueteEditar.setHint("Código paquete a modificar");
 
-      btnProcesarEditPaquetes.setBackground(new java.awt.Color(27, 161, 96));
-      btnProcesarEditPaquetes.setForeground(new java.awt.Color(255, 255, 255));
-      btnProcesarEditPaquetes.setText("Procesar");
+      btnProcesarEliminarPaquetes.setBackground(new java.awt.Color(27, 161, 96));
+      btnProcesarEliminarPaquetes.setForeground(new java.awt.Color(255, 255, 255));
+      btnProcesarEliminarPaquetes.setText("Procesar");
 
       btnCancelarEditPaquetes.setBackground(new java.awt.Color(221, 80, 68));
       btnCancelarEditPaquetes.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,7 +95,7 @@ public class frmfiltrareditar extends javax.swing.JFrame {
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
             .addContainerGap(64, Short.MAX_VALUE)
-            .addComponent(btnProcesarEditPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btnProcesarEliminarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(btnCancelarEditPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(61, 61, 61))
@@ -111,7 +111,7 @@ public class frmfiltrareditar extends javax.swing.JFrame {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(btnCancelarEditPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(btnProcesarEditPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(btnProcesarEliminarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(28, 28, 28))
       );
 
@@ -146,28 +146,30 @@ public class frmfiltrareditar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmfiltrareditar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmeliminarpaquetes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmfiltrareditar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmeliminarpaquetes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmfiltrareditar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmeliminarpaquetes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmfiltrareditar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmeliminarpaquetes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmfiltrareditar().setVisible(true);
+                new frmeliminarpaquetes().setVisible(true);
             }
         });
     }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    public principal.MaterialButtomRectangle btnCancelarEditPaquetes;
-   public principal.MaterialButtomRectangle btnProcesarEditPaquetes;
+   public principal.MaterialButtomRectangle btnProcesarEliminarPaquetes;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel20;
    private javax.swing.JPanel jPanel1;

@@ -52,14 +52,14 @@ public class frmfiltrareEliminarpaquete extends javax.swing.JFrame {
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel20)
-            .addGap(106, 106, 106))
+            .addGap(94, 94, 94))
       );
       jPanel2Layout.setVerticalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addGap(23, 23, 23)
+            .addGap(24, 24, 24)
             .addComponent(jLabel20)
-            .addContainerGap(25, Short.MAX_VALUE))
+            .addContainerGap(24, Short.MAX_VALUE))
       );
 
       jLabel1.setFont(new java.awt.Font("Century", 0, 24)); // NOI18N

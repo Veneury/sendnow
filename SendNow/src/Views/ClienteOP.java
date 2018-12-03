@@ -352,25 +352,16 @@ public class ClienteOP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setLocationRelativeTo(null);
-        AgreCL agr= new AgreCL();
-        agr.setVisible(true);
-        this.setVisible(false);
+     
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setLocationRelativeTo(null);
-        ModificarCL mod= new ModificarCL();
-        mod.setVisible(true);
-        this.setVisible(false);
+      ;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.setLocationRelativeTo(null);
-        EliminarCL elim= new EliminarCL();
-        elim.setVisible(true);
-        this.setVisible(false);
+   
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
