@@ -1,42 +1,35 @@
-
 package Models;
 
 import Models.Conexion;
 import Models.Personas;
-import Views.AgreCL;
-import Views.EliminarCL;
-
+import Views.Login;
+import Views.MenuCL;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 
 public class Cliente extends Conexion {
+    
+    Login login = new Login();
+   MenuCL menu = new MenuCL();
    
-    
-    
-
    
     public boolean Add(Personas per) {
-      
-        
-        
-        
-        try{
-         
-          Connection con = null;
-          con = getConexion();
-          getConexion();
-          
-          
-            ps= con.prepareStatement("INSERT INTO clientes (cedula, nombre, apellido, sexo, estado_civil, calle, barrio, sector, municipio, ciudad, estado, codigoPostal, pais, telefono, celular, correo)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+
+        try {
+
+            Connection con = null;
+            con = getConexion();
+            getConexion();
+
+            ps = con.prepareStatement("INSERT INTO clientes (cedula, nombre, apellido, sexo, estado_civil, calle, barrio, sector, municipio, ciudad, estado, codigoPostal, pais, telefono, celular, correo)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             ps.setString(1, per.getCedula());
             ps.setString(2, per.getNombre());
             ps.setString(3, per.getApellido());
@@ -56,66 +49,55 @@ public class Cliente extends Conexion {
             ps.setString(16, per.getCorreo());
             ps.execute();
             return true;
-                
-        }catch(Exception e){
-        System.err.println(e);
-        return false;
-        }finally{
-        try{
-            con.close();
-            
-            
-        }catch(SQLException e){
-        System.err.println(e);
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.close();
+
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
-        }
-        
-        
+
     }
 
-   
-    public void Wach() {
-        
-    }
+    public boolean delete(Personas per) {
 
-   
-    public boolean delete(Personas per ) {
-        
-        
-        try{
-          Connection con = null;
-          con = getConexion();
-          getConexion();
-            
-           ps= con.prepareStatement("DELETE FROM clientes WHERE cedula=?");
-           ps.setString(1, per.getCedula());
-           ps.execute();
-           
+        try {
+            Connection con = null;
+            con = getConexion();
+            getConexion();
+
+            ps = con.prepareStatement("DELETE FROM clientes WHERE cedula=?");
+            ps.setString(1, per.getCedula());
+            ps.execute();
+
             return true;
-                
-        }catch(Exception e){
-        System.err.println(e);
-        return false;
-        }finally{
-        try{
-            con.close();
-        }catch(SQLException e){
-        System.err.println(e);
-        }
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
     }
 
     public boolean Update(Personas per) {
-        
-        
-        try{
-          Connection con = null;
-          con = getConexion();
-          getConexion();
-          
-           
-          
-            ps= con.prepareStatement("UPDATE clientes SET nombre=?, apellido=?, sexo=?, estado_civil=?, calle=?, barrio=?, sector=?, municipio=?, ciudad=?, estado=?, codigoPostal=?, pais=?, telefono=?, celular=?, correo=? WHERE Cedula=?");            ps.setString(1, per.getCedula());
+
+        try {
+            Connection con = null;
+            con = getConexion();
+            getConexion();
+
+            ps = con.prepareStatement("UPDATE clientes SET nombre=?, apellido=?, sexo=?, estado_civil=?, calle=?, barrio=?, sector=?, municipio=?, ciudad=?, estado=?, codigoPostal=?, pais=?, telefono=?, celular=?, correo=? WHERE Cedula=?");
+            ps.setString(1, per.getCedula());
             ps.setString(1, per.getNombre());
             ps.setString(2, per.getApellido());
             ps.setString(3, per.getSexo());
@@ -135,91 +117,173 @@ public class Cliente extends Conexion {
             ps.setString(16, per.getCedula());
             ps.execute();
             return true;
-                
-        }catch(Exception e){
-        System.err.println(e);
-        return false;
-        }finally{
-        try{
-            con.close();
-            
-            
-        }catch(SQLException e){
-        System.err.println(e);
+
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.close();
+
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
-        }
-        
-        
-       
+
     }
-    
-    public boolean buscar(Personas per){
-    
-     try{
-          Connection con = null;
-          ResultSet klk= null;
-          con = getConexion();
-          getConexion();
-          
-           ps= con.prepareStatement("SELECT *FROM clientes WHERE Cedula=?");
-           ps.setString(1, per.getCedula());
-           klk = ps.executeQuery();
-           
-           if(klk.next())
-           {
-            per.setNombre(klk.getString("nombre"));
-            per.setApellido(klk.getString("apellido"));
-            per.setSexo(klk.getString("sexo"));
-            //per.setFecha(klk.getString("fecha"));
-            per.setEstado_civil(klk.getString("estado_civil"));
-            per.setCalle(klk.getString("calle"));
-            per.setBarrio(klk.getString("barrio"));
-            per.setSector(klk.getString("sector"));
-            per.setMunicipio(klk.getString("municipio"));
-            per.setCiudad(klk.getString("ciudad"));
-            per.setEstado(klk.getString("estado"));
-            per.setCodigo_postal(klk.getString("codigoPostal"));
-            per.setPais(klk.getString("pais"));
-            per.setTelefono(klk.getString("telefono"));
-            per.setCelular(klk.getString("celular"));
-            per.setCorreo(klk.getString("correo"));
+
+    public boolean buscar(Personas per) {
+
+        try {
+            Connection con = null;
+            ResultSet klk = null;
+            con = getConexion();
+            getConexion();
+
+            ps = con.prepareStatement("SELECT *FROM clientes WHERE Cedula=?");
+            ps.setString(1, per.getCedula());
+            klk = ps.executeQuery();
+
+            if (klk.next()) {
+                per.setNombre(klk.getString("nombre"));
+                per.setApellido(klk.getString("apellido"));
+                per.setSexo(klk.getString("sexo"));
+                //per.setFecha(klk.getString("fecha"));
+                per.setEstado_civil(klk.getString("estado_civil"));
+                per.setCalle(klk.getString("calle"));
+                per.setBarrio(klk.getString("barrio"));
+                per.setSector(klk.getString("sector"));
+                per.setMunicipio(klk.getString("municipio"));
+                per.setCiudad(klk.getString("ciudad"));
+                per.setEstado(klk.getString("estado"));
+                per.setCodigo_postal(klk.getString("codigoPostal"));
+                per.setPais(klk.getString("pais"));
+                per.setTelefono(klk.getString("telefono"));
+                per.setCelular(klk.getString("celular"));
+                per.setCorreo(klk.getString("correo"));
+                return true;
+
+            }
             return true;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.close();
 
-           }
-           return true;
-            }catch(Exception e){
-        System.err.println(e);
-        return false;
-        }finally{
-        try{
-            con.close();
-            
-            
-        }catch(SQLException e){
-        System.err.println(e);
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
         }
-        }
-        
+
+    }
+    
+    
+      public ArrayList<Personas>listPersona(){
+      
+      ArrayList ListaPersona = new ArrayList();
+      
+      Personas persona;
+      
+      try{
           
-    
-    }
+          Connection accDB= getConexion();
+          PreparedStatement ps= accDB.prepareStatement("SELECT * FROM clientes");
+          ResultSet rs= ps.executeQuery();
+          
+          
+          while(rs.next()){
+          
+                 persona = new Personas();
+                 persona.setCedula(rs.getString(1));
+                 persona.setNombre(rs.getString(2));
+                 persona.setApellido(rs.getString(3));
+               //persona.setFecha(rs.getDate(1));
+                 persona.setSexo(rs.getString(4));
+                 persona.setCalle(rs.getString(5));
+                 persona.setSector(rs.getString(6));            
+                 persona.setCiudad(rs.getString(7));
+                 persona.setEstado(rs.getString(8));
+                 persona.setPais(rs.getString(9));
+                 persona.setTelefono(rs.getString(10));
+                 persona.setCelular(rs.getString(11));
+                 persona.setCorreo(rs.getString(12));
+                 ListaPersona.add(persona);
+                 
+          }
+          
+      } catch (SQLException ex) {
+      }
+        return ListaPersona;
+  
+      }
+      
+      
+    public boolean HacerRegistro(Usuario usu) {
 
-    public void search() {
+        try {
+
+            Connection con = null;
+            con = getConexion();
+            getConexion();
+
+                ps = con.prepareStatement("INSERT INTO usuario (usuarios, contrasena, id_tipoUsuario) VALUES (?,?,?)");
+                ps.setString(1, usu.getUsuario());
+                ps.setString(2, usu.getPass());
+                ps.setInt(3, usu.getId_tipo());
+                ps.execute();
+                return true;
+
+
+            } catch (Exception e) {   
+                System.err.println(e);    
+                return false;    
+            } finally {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    System.err.println(e);
+                }
+            }
+
+        }
+      
+    public void Login(Usuario usu){
         
+        Connection con = null;
+        con = getConexion();
         
-    }
-
-    public void SendEmail() {
+        usu.setUsuario(login.txtUsuario.getText());
+        usu.setPass(String.valueOf(login.txtPass.getPassword()));
+        int resultado=0;
+        String SQL="SELECT * FROM usuario WHERE  usuarios='"+usu.getUsuario()+"' AND  contrasena='"+usu.getPass()+"'";
         
+            try{
+              Statement st = con.createStatement();
+              ResultSet rs =  st.executeQuery(SQL);
+              if(!usu.getUsuario().equals("") && !usu.getPass().equals("")){
+              if(rs.next()){
+                  resultado=1;
+              if(resultado==1){
+                  menu.setVisible(true);
+                  login.dispose();
+                }
+
+               }else{
+                   JOptionPane.showMessageDialog(null, "Usuario no registrado");
+               }
+               }else{JOptionPane.showMessageDialog(null, "Por favor llenar todos los campos");}
+
+               } catch (SQLException ex) {
+                Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+               }
+           }
+      
     }
+      
+ 
+      
+      
 
-   
-
-   
     
-    
-}
-    
-    
-    
-
