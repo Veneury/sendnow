@@ -98,7 +98,7 @@ public class ModelsMetodosPaquetes {
    }
 
    public boolean delete(ModelsPaquetes paquetes) {
-      String sql = "DELETE FROM paquetes WHERE codigo_paquete=? ";
+      String sql = "DELETE FROM paquetes WHERE codigo_paquete=?";
 
       try {
          ps = con.prepareStatement(sql);
