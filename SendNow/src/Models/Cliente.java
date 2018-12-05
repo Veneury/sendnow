@@ -2,8 +2,11 @@ package Models;
 
 import Models.Conexion;
 import Models.Personas;
+import Views.Administrad;
 import Views.Login;
 import Views.MenuCL;
+import Views.newMenu;
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,8 +20,10 @@ import javax.swing.JOptionPane;
 
 public class Cliente extends Conexion {
     
-    Login login = new Login();
-   MenuCL menu = new MenuCL();
+   Login login = new Login();
+   newMenu menu = new newMenu();
+   Administrad admi= new Administrad();
+ 
    
    
     public boolean Add(Personas per) {
@@ -34,7 +39,6 @@ public class Cliente extends Conexion {
             ps.setString(2, per.getNombre());
             ps.setString(3, per.getApellido());
             ps.setString(4, per.getSexo());
-            //conex.ps.setDate(5,Date.valueOf(S.txtFecha.getText()));
             ps.setString(5, per.getEstado_civil());
             ps.setString(6, per.getCalle());
             ps.setString(7, per.getBarrio());
@@ -50,19 +54,16 @@ public class Cliente extends Conexion {
             ps.execute();
             return true;
 
-        } catch (Exception e) {
+            }catch (Exception e) {
             System.err.println(e);
             return false;
-        } finally {
+            } finally {
             try {
-                con.close();
+            con.close();
 
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
-        }
-
-    }
+            }catch (SQLException e) {
+            System.err.println(e);
+            }}}
 
     public boolean delete(Personas per) {
 
@@ -77,17 +78,15 @@ public class Cliente extends Conexion {
 
             return true;
 
-        } catch (Exception e) {
+            }catch (Exception e) {
             System.err.println(e);
             return false;
-        } finally {
+            }finally {
             try {
-                con.close();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
-        }
-    }
+            con.close();
+            }catch (SQLException e) {
+            System.err.println(e);
+            }}}
 
     public boolean Update(Personas per) {
 
@@ -101,7 +100,6 @@ public class Cliente extends Conexion {
             ps.setString(1, per.getNombre());
             ps.setString(2, per.getApellido());
             ps.setString(3, per.getSexo());
-            //conex.ps.setDate(5,Date.valueOf(S.txtFecha.getText()));
             ps.setString(4, per.getEstado_civil());
             ps.setString(5, per.getCalle());
             ps.setString(6, per.getBarrio());
@@ -118,19 +116,15 @@ public class Cliente extends Conexion {
             ps.execute();
             return true;
 
-        } catch (Exception e) {
+            } catch (Exception e) {
             System.err.println(e);
             return false;
-        } finally {
+            } finally {
             try {
-                con.close();
-
+            con.close();
             } catch (SQLException e) {
-                System.err.println(e);
-            }
-        }
-
-    }
+            System.err.println(e);
+            }}}
 
     public boolean buscar(Personas per) {
 
@@ -148,7 +142,6 @@ public class Cliente extends Conexion {
                 per.setNombre(klk.getString("nombre"));
                 per.setApellido(klk.getString("apellido"));
                 per.setSexo(klk.getString("sexo"));
-                //per.setFecha(klk.getString("fecha"));
                 per.setEstado_civil(klk.getString("estado_civil"));
                 per.setCalle(klk.getString("calle"));
                 per.setBarrio(klk.getString("barrio"));
@@ -163,21 +156,16 @@ public class Cliente extends Conexion {
                 per.setCorreo(klk.getString("correo"));
                 return true;
 
-            }
-            return true;
-        } catch (Exception e) {
-            System.err.println(e);
-            return false;
-        } finally {
-            try {
-                con.close();
-
-            } catch (SQLException e) {
+                }
+                return true;
+                } catch (Exception e) {
+                   System.err.println(e);
+                return false;
+                } finally {
+                try { con.close();
+                }catch (SQLException e) {
                 System.err.println(e);
-            }
-        }
-
-    }
+               }}}
     
     
       public ArrayList<Personas>listPersona(){
@@ -199,7 +187,6 @@ public class Cliente extends Conexion {
                  persona.setCedula(rs.getString(1));
                  persona.setNombre(rs.getString(2));
                  persona.setApellido(rs.getString(3));
-               //persona.setFecha(rs.getDate(1));
                  persona.setSexo(rs.getString(4));
                  persona.setCalle(rs.getString(5));
                  persona.setSector(rs.getString(6));            
@@ -215,9 +202,7 @@ public class Cliente extends Conexion {
           
       } catch (SQLException ex) {
       }
-        return ListaPersona;
-  
-      }
+        return ListaPersona;}
       
       
     public boolean HacerRegistro(Usuario usu) {
@@ -228,14 +213,16 @@ public class Cliente extends Conexion {
             con = getConexion();
             getConexion();
 
-                ps = con.prepareStatement("INSERT INTO usuario (usuarios, contrasena, id_tipoUsuario) VALUES (?,?,?)");
+                ps = con.prepareStatement("INSERT INTO usuario (usuarios, contrasena, id_tipoUsuario, nombre, apellido, correo) VALUES (?,?,?,?,?,?)");
                 ps.setString(1, usu.getUsuario());
                 ps.setString(2, usu.getPass());
                 ps.setInt(3, usu.getId_tipo());
+                ps.setString(4, usu.getNombre());
+                ps.setString(5, usu.getApellido());
+                ps.setString(6, usu.getCorreo());
                 ps.execute();
                 return true;
-
-
+                
             } catch (Exception e) {   
                 System.err.println(e);    
                 return false;    
@@ -244,43 +231,59 @@ public class Cliente extends Conexion {
                     con.close();
                 } catch (SQLException e) {
                     System.err.println(e);
-                }
-            }
-
-        }
-      
-    public void Login(Usuario usu){
-        
-        Connection con = null;
-        con = getConexion();
+            }}}
+    
+    public boolean LoginUusu(Usuario usu){
+         
+        Statement stmt;
+        ResultSet rs;
+        con=getConexion();
         
         usu.setUsuario(login.txtUsuario.getText());
         usu.setPass(String.valueOf(login.txtPass.getPassword()));
-        int resultado=0;
-        String SQL="SELECT * FROM usuario WHERE  usuarios='"+usu.getUsuario()+"' AND  contrasena='"+usu.getPass()+"'";
+        try{
+            
+            stmt= con.createStatement();
+            rs=stmt.executeQuery("SELECT TipoUsu FROM usuario WHERE  usuarios='"+usu.getUsuario()+"' AND  contrasena='"+usu.getPass()+"'");
+            
+            if(rs!= null){
+            
+                if(rs.next()){
+                
+                    switch(rs.getString("TipoUsu")){
+                    
+                        case "Administrador":
+                            login.dispose();
+                            menu.setLocationRelativeTo(null);
+                            menu.setVisible(true);
+                            break;
+                            
+                        case "Receptor":
+                            login.dispose();
+                            admi.setLocationRelativeTo(null);
+                            admi.setVisible(true);
+                            break;
+
+                    }
+                
+                }else{JOptionPane.showMessageDialog(null, "Usuario no existe");}
+                
+                
+            
+            }
+    
+        }catch(SQLException e){
         
-            try{
-              Statement st = con.createStatement();
-              ResultSet rs =  st.executeQuery(SQL);
-              if(!usu.getUsuario().equals("") && !usu.getPass().equals("")){
-              if(rs.next()){
-                  resultado=1;
-              if(resultado==1){
-                  menu.setVisible(true);
-                  login.dispose();
-                }
-
-               }else{
-                   JOptionPane.showMessageDialog(null, "Usuario no registrado");
-               }
-               }else{JOptionPane.showMessageDialog(null, "Por favor llenar todos los campos");}
-
-               } catch (SQLException ex) {
-                Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
-               }
-           }
-      
+ }
+        return false;
     }
+
+}
+            
+            
+       
+      
+    
       
  
       

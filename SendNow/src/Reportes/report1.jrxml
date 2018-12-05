@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3eeda05d-3ee2-402d-844f-f71b1a9406d0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="987c27d4-79b0-4ce4-9269-5752aad30f56"/>
+	<parameter name="Mujer" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hombre" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$F{((SELECT COUNT(*)FROM clientes WHERE sexo='Hombre')*100) / (SELECT COUNT(*)FROM clientes)}$F{((SELECT COUNT(*)FROM clientes WHERE sexo='Mujer')*100) / (SELECT COUNT(*)FROM clientes)}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[
+
+SELECT((SELECT COUNT(*)FROM clientes WHERE sexo='Mujer')*100) / (SELECT COUNT(*)FROM clientes)]]>
+	</queryString>
+	<field name="((SELECT COUNT(*)FROM clientes WHERE sexo=&apos;Mujer&apos;)*100) / (SELECT COUNT(*)FROM clientes)" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="0" width="331" height="42" uuid="4c1ff44a-289e-46c5-a784-59aa9b412620"/>
+				<textElement>
+					<font size="26" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Reportes de clientes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="180" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="82" width="329" height="20" uuid="90f29372-c4ad-46c6-a8bc-9d89239db748"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Porciento  de los clientes que recogen paquetes:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="82" width="55" height="20" uuid="ffb9d6f3-0ecc-4595-aeae-72eea5932b52"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Recogidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="82" width="88" height="20" uuid="be3510ad-033f-4a2f-8353-1befb09c0c60"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[No recogidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="160" width="62" height="20" uuid="ba4052c3-18f0-4f65-8d72-b21ccbf6573b"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Hombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="519" y="160" width="53" height="20" uuid="cf572d2d-7584-4390-8092-c6fad4fe6d36"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Mujeres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="160" width="146" height="20" uuid="88e2ab4e-1c5c-4154-934f-610b579eac5b"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Porciento de clientes :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="233" height="22" uuid="da56d3f6-7d21-4804-81cc-0226f87f910c"/>
+				<textElement>
+					<font size="14" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[cantidad de clientes que recogen paquetes:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="26" height="20" uuid="2bc866e1-ced4-4da7-95f8-99783cdae551"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Dia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="3" width="39" height="20" uuid="4188ecae-3147-414e-9a39-ea03f207cb5e"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="519" y="3" width="53" height="20" uuid="2290d974-826d-4181-8e74-139190a72838"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
