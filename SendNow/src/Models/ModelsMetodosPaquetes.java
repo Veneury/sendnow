@@ -115,7 +115,7 @@ public class ModelsMetodosPaquetes {
 
    public ArrayList<ModelsPaquetes> listPaquetes() {
 
-      //ArrayList ListaPaquetes = new ArrayList();
+      ArrayList ListaPaquetes = new ArrayList();
 
       ModelsPaquetes modelsPaquetes;
 
@@ -127,17 +127,16 @@ public class ModelsMetodosPaquetes {
 
             modelsPaquetes = new ModelsPaquetes();
             modelsPaquetes.setCodigo(rs.getString(1));
-            modelsPaquetes.setNombre(rs.getString(2));
-            modelsPaquetes.setDescripcion(rs.getString(3));
-            modelsPaquetes.setPeso(rs.getString(4));
-            modelsPaquetes.setStatus(rs.getString(5));
-            
-            listPaquetes().add(modelsPaquetes);
-
+            modelsPaquetes.setTipo(rs.getString(2));
+            modelsPaquetes.setNombre(rs.getString(3));
+            modelsPaquetes.setDescripcion(rs.getString(4));
+            modelsPaquetes.setPeso(rs.getString(5));
+            modelsPaquetes.setStatus(rs.getString(6));
+            ListaPaquetes.add(modelsPaquetes);
          }
 
       } catch (SQLException ex) {
       }
-      return listPaquetes();
+      return ListaPaquetes;
    }
 }

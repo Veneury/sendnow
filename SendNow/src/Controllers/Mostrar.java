@@ -43,7 +43,7 @@ public class Mostrar {
  public void AgregarCliente(){
      
      AgreCL agre = new AgreCL();
-     MVC  h = new MVC(per, cli, login);
+     //MVC  h = new MVC(per, cli, login);
      login.setVisible(true);
      login.setLocationRelativeTo(null);
  
