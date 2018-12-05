@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -107,8 +108,36 @@ public class ModelsMetodosPaquetes {
          return true;
       } catch (SQLException e) {
          System.err.println(e);
-       
+
       }
-        return false;
+      return false;
+   }
+
+   public ArrayList<ModelsPaquetes> listPaquetes() {
+
+      //ArrayList ListaPaquetes = new ArrayList();
+
+      ModelsPaquetes modelsPaquetes;
+
+      try {
+         PreparedStatement ps = con.prepareStatement("SELECT * FROM paquetes");
+         ResultSet rs = ps.executeQuery();
+
+         while (rs.next()) {
+
+            modelsPaquetes = new ModelsPaquetes();
+            modelsPaquetes.setCodigo(rs.getString(1));
+            modelsPaquetes.setNombre(rs.getString(2));
+            modelsPaquetes.setDescripcion(rs.getString(3));
+            modelsPaquetes.setPeso(rs.getString(4));
+            modelsPaquetes.setStatus(rs.getString(5));
+            
+            listPaquetes().add(modelsPaquetes);
+
+         }
+
+      } catch (SQLException ex) {
+      }
+      return listPaquetes();
    }
 }

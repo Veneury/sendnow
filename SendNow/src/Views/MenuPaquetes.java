@@ -65,5 +65,13 @@ public class MenuPaquetes {
       frm.setVisible(true);
    }
    
+      public void listadoPaquetes()
+   {
+      frmVerPaquetes frm = new frmVerPaquetes();
+      ControllerVerPaquetes controllerVerPaquetes= new ControllerVerPaquetes(mod, modC, frm);
+      controllerVerPaquetes.iniciar();
+      frm.setVisible(true);
+   }
+   
    
 }

@@ -141,6 +141,11 @@ public class frmMenuPaquetes extends javax.swing.JFrame {
 
       btnlistar.setBackground(new java.awt.Color(255, 255, 255));
       btnlistar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/list.png"))); // NOI18N
+      btnlistar.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btnlistarActionPerformed(evt);
+         }
+      });
 
       jLabel7.setFont(new java.awt.Font("Century", 0, 24)); // NOI18N
       jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -401,6 +406,10 @@ public class frmMenuPaquetes extends javax.swing.JFrame {
    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
       mn.eliminarPaquetes();
    }//GEN-LAST:event_btneliminarActionPerformed
+
+   private void btnlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistarActionPerformed
+     mn.listadoPaquetes();
+   }//GEN-LAST:event_btnlistarActionPerformed
 
    /**
     * @param args the command line arguments
