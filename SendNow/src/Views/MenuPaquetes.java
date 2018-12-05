@@ -5,7 +5,6 @@
  */
 package Views;
 
-
 import Models.*;
 import Views.*;
 import Controllers.*;
@@ -15,13 +14,14 @@ import Controllers.*;
  * @author TooDe
  */
 public class MenuPaquetes {
-
+      ModelsPaquetes mod = new ModelsPaquetes();
+      ModelsMetodosPaquetes modC = new ModelsMetodosPaquetes();
    /**
     * @param args the command line arguments
     */
-   public static void main(String[] args) {
+   //public static void main(String[] args) {
       //Instanciamos el modelo, metodos y formularios
-     /* ModelsPaquetes modp = new ModelsPaquetes();
+      /* ModelsPaquetes modp = new ModelsPaquetes();
       ModelsMetodosPaquetes modmp = new ModelsMetodosPaquetes();
       frmpaquete frmp = new frmpaquete();
       frmModificarpaquete frmmp= new frmModificarpaquete();
@@ -37,15 +37,33 @@ public class MenuPaquetes {
       //frmp.setVisible(true);
       //frmmp.setVisible(true);
       frmp.setVisible(true);*/
-     
-     
-            ModelsPaquetes mod = new ModelsPaquetes();
-        ModelsMetodosPaquetes modC = new ModelsMetodosPaquetes();
-        frmpaquete frm = new frmpaquete();
-        
-        ControllersPaquetes ctrl = new ControllersPaquetes(mod, modC, frm);
-        ctrl.iniciar();
-        frm.setVisible(true);
-   }
 
+ 
+
+   public void agregarPaquete() {
+
+      frmpaquete frm = new frmpaquete();
+
+      ControllersPaquetes ctrl = new ControllersPaquetes(mod, modC, frm);
+      ctrl.iniciar();
+      frm.setVisible(true);
+   }
+   
+   public void modificarPaquetes()
+   {
+      frmModificarpaquete frm =new frmModificarpaquete();
+      ControllerProcesoModificarPaquetes controllerModificar = new ControllerProcesoModificarPaquetes(mod, modC, frm);
+      controllerModificar.iniciar(); 
+      frm.setVisible(true);
+   }
+   
+   public void eliminarPaquetes()
+   {
+      frmeliminarpaquetes frm = new frmeliminarpaquetes();
+      ControllerProcesoEliminarPaquetes controllerProcesoEliminarPaquetes = new ControllerProcesoEliminarPaquetes(mod, modC, frm);
+      controllerProcesoEliminarPaquetes.iniciar();
+      frm.setVisible(true);
+   }
+   
+   
 }

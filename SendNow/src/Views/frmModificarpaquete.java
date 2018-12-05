@@ -46,7 +46,7 @@ public class frmModificarpaquete extends javax.swing.JFrame {
       btnBusc = new principal.MaterialButtomRectangle();
       txtTipoPaquete = new de.craften.ui.swingmaterial.MaterialTextField();
 
-      setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+      setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
       setBackground(new java.awt.Color(255, 255, 255));
       setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
       setLocation(new java.awt.Point(250, 50));
@@ -153,7 +153,7 @@ public class frmModificarpaquete extends javax.swing.JFrame {
             .addComponent(txtCodigoModificarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
             .addComponent(txtNombreModificarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(txtPesoModificarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(18, 18, 18)
             .addComponent(txtTipoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,7 +259,7 @@ public class frmModificarpaquete extends javax.swing.JFrame {
       /* Create and display the form */
       java.awt.EventQueue.invokeLater(new Runnable() {
          public void run() {
-            new frmModificarpaquete().setVisible(true);
+            new MenuPaquetes().modificarPaquetes();
          }
       });
    }

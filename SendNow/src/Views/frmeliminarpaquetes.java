@@ -162,7 +162,7 @@ public class frmeliminarpaquetes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmeliminarpaquetes().setVisible(true);
+                new MenuPaquetes().eliminarPaquetes();
             }
         });
     }
